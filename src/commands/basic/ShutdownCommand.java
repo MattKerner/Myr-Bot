@@ -17,9 +17,7 @@ public class ShutdownCommand extends Command {
     @Override protected void doCommand(MessageReceivedEvent event) {
 
 
-        if(!event.getAuthor().getName().equalsIgnoreCase("BraigFS")) {
-            event.getChannel().sendMessage(event.getAuthor().getName()).queue();
-            event.getChannel().sendMessage("You're banned").queue();
+        if(!event.getAuthor().getId().equals("173526747755708416")) {
             return;
         }
         else

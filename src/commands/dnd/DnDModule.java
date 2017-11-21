@@ -15,6 +15,7 @@ public class DnDModule extends CommandModule {
         //Add commands here
         //this.addCommand(new ShutdownCommand(this));
         this.addCommand(new StatRollerCommand(this));
+        this.addCommand(new HPRollerCommand(this));
     }
 
     @Override protected String getCompleteName() {

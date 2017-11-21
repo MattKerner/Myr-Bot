@@ -18,8 +18,9 @@ public class HelpCommand extends Command {
         StringBuilder builder = new StringBuilder();
 
         builder.append("```");
+        builder.append("!shutdown - this shuts me down! (Only Matt can use this command.) \n");
         builder.append("!rollstats - this generates stats for DnD characters! \n");
-        builder.append("!shutdown - this shuts me down! (Only Matt can use this command.)");
+        builder.append("!rollhp <level> <hit die> <con modifier> -  this generates HP for DnD characters!");
         builder.append("```");
 
         return builder.toString();
