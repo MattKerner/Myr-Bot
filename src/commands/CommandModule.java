@@ -39,6 +39,7 @@ public class CommandModule {
         for(Command command : this.commands) {
 
             String name = this.getCompleteName() + command.getName();
+            name = name.toLowerCase();
             if(string.startsWith(name)) {
 
                 return command;

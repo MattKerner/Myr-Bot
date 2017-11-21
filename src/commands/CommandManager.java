@@ -1,6 +1,7 @@
 package commands;
 
 import commands.basic.BasicModule;
+import commands.dnd.DnDModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class CommandManager {
 
         //Insert the modules here
         this.modules.add(new BasicModule());
+        this.modules.add(new DnDModule());
 
     }
 

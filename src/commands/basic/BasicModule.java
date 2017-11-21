@@ -13,6 +13,7 @@ public class BasicModule extends CommandModule {
 
         //Add commands here
         this.addCommand(new ShutdownCommand(this));
+        this.addCommand(new HelpCommand(this));
     }
 
     @Override protected String getCompleteName() {

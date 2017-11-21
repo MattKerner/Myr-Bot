@@ -21,8 +21,17 @@ public class BotCore {
         //Create the Configuration mangaer and Bot Core instance.
         this.configurationManager = BotConfigurationManager.getInstance();
         this.createInstance();
-
+        this.attachCallBacks();
     }
+
+    /**
+     * Method which directs the Discord Bot to the appropriate message handlers.
+     */
+    private void attachCallBacks() {
+
+        this.jda.addEventListener(new CommandListener());
+    }
+
 
     /**
      * Method which creates the instance of the bot. Calling this function starts the functionality
@@ -34,6 +43,7 @@ public class BotCore {
             this.jda = new JDABuilder(AccountType.BOT)
                     .setToken(configurationManager.getPropertyValue("DISCORD_BOT_API_KEY"))
                     .buildBlocking();
+
 
         } catch (InterruptedException e) {
 
@@ -53,13 +63,6 @@ public class BotCore {
         }
     }
 
-    /**
-     * Method which directs the Discord Bot to the appropriate message handlers.
-     */
-    private void attachCallbacks() {
-
-        this.jda.addEventListener(new CommandListener());
-    }
 
     /**
      * Shutdown hook making sure that when the shutdown command is called, cleanup operations are completed first

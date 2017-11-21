@@ -16,7 +16,14 @@ public class ShutdownCommand extends Command {
 
     @Override protected void doCommand(MessageReceivedEvent event) {
 
-        //TODO: Do some sort of administration checking. Don't just let anyone shut down the bot. NOT IMPLEMENTED
+
+        if(!event.getAuthor().getName().equalsIgnoreCase("BraigFS")) {
+            event.getChannel().sendMessage(event.getAuthor().getName()).queue();
+            event.getChannel().sendMessage("You're banned").queue();
+            return;
+        }
+        else
+            event.getChannel().sendMessage("Goodbye").queue();
 
         System.exit(0);
     }
